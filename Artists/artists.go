@@ -25,11 +25,11 @@ func GetArtists() {
 		log.Fatal(err)
 	}
 
-	var c []artists
-	err = json.Unmarshal(names, &c)
+	var arrArtists []artists
+	err = json.Unmarshal(names, &arrArtists)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Printf("%v\n", c)
+	fmt.Printf("%v\n", arrArtists)
 }
