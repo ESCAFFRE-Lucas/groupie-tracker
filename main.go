@@ -3,13 +3,11 @@ package main
 import (
 	"fmt"
 	"groupie-tracker/Artists"
-	"groupie-tracker/Locations"
 	"html/template"
 	"net/http"
 )
 
 func HomePage(w http.ResponseWriter, r *http.Request) {
-	Locations.GetLocations()
 	tmpl := template.Must(template.ParseFiles("index.gohtml"))
 	data := Artists.GetArtists()
 	_ = tmpl.Execute(w, data)
