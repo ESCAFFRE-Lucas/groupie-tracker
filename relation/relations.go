@@ -3,20 +3,12 @@ package relation
 import (
 	"encoding/json"
 	"fmt"
+	"groupie-tracker/structures"
 	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
 )
-
-type index struct {
-	Relations []relations `json:"index"`
-}
-
-type relations struct {
-	Id             int                 `json:"id"`
-	DatesLocations map[string][]string `json:"datesLocations"`
-}
 
 func GetRelations() {
 	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/relation")
@@ -36,7 +28,7 @@ func GetRelations() {
 		log.Fatal(err)
 	}
 
-	var arrRelations index
+	var arrRelations structures.Index
 	err = json.Unmarshal(relation, &arrRelations)
 	if err != nil {
 		log.Fatal(err)

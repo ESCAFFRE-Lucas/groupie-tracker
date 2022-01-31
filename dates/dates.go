@@ -3,17 +3,12 @@ package dates
 import (
 	"encoding/json"
 	"fmt"
+	"groupie-tracker/structures"
 	"io"
 	"io/ioutil"
 	"log"
 	"net/http"
 )
-
-type dates struct {
-	Index []struct {
-		Date []string `json:"dates"`
-	}
-}
 
 func GetDates() {
 	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/dates")
@@ -33,7 +28,7 @@ func GetDates() {
 		log.Fatal(err)
 	}
 
-	var arrDates dates
+	var arrDates structures.Dates
 	err = json.Unmarshal(date, &arrDates)
 	if err != nil {
 		log.Fatal(err)
