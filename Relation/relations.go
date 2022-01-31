@@ -9,12 +9,13 @@ import (
 	"net/http"
 )
 
+type index struct {
+	Relations []relations `json:"index"`
+}
+
 type relations struct {
-	Index []struct {
-		DatesLocations []struct {
-			Locations []string
-		} `json:"datesLocations"`
-	} `json:"index"`
+	Id	int `json:"id"`
+	DatesLocations map[string][]string `json:"datesLocations"`
 }
 
 func GetRelations() {
@@ -35,7 +36,7 @@ func GetRelations() {
 		log.Fatal(err)
 	}
 
-	var arrRelations relations
+	var arrRelations index
 	err = json.Unmarshal(relation, &arrRelations)
 	if err != nil {
 		log.Fatal(err)

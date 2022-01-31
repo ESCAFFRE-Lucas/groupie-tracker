@@ -12,7 +12,7 @@ type artists struct {
 	Name string `json:"name"`
 }
 
-func GetArtists() {
+func GetArtists() []artists{
 	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/artists")
 	if err != nil {
 		log.Fatal(err)
@@ -32,4 +32,5 @@ func GetArtists() {
 	}
 
 	fmt.Printf("%v\n", arrArtists)
+	return arrArtists
 }
