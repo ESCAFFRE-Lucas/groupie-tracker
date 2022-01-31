@@ -1,18 +1,16 @@
-package Artists
+package artists
 
 import (
 	"encoding/json"
 	"fmt"
+	"groupie-tracker/structures"
+	"groupie-tracker/utilities"
 	"io/ioutil"
 	"log"
 	"net/http"
 )
 
-type artists struct {
-	Name string `json:"name"`
-}
-
-func GetArtists() []artists{
+func GetArtists() []structures.Artists {
 	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/artists")
 	if err != nil {
 		log.Fatal(err)
@@ -25,12 +23,13 @@ func GetArtists() []artists{
 		log.Fatal(err)
 	}
 
-	var arrArtists []artists
+	var arrArtists []structures.Artists
 	err = json.Unmarshal(names, &arrArtists)
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	fmt.Printf("%v\n", arrArtists)
+	utilities.SaveInFile(arrArtists)
 	return arrArtists
 }

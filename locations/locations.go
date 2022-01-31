@@ -1,4 +1,4 @@
-package Locations
+package locations
 
 import (
 	"encoding/json"

@@ -1,4 +1,4 @@
-package Relation
+package relation
 
 import (
 	"encoding/json"
@@ -14,7 +14,7 @@ type index struct {
 }
 
 type relations struct {
-	Id	int `json:"id"`
+	Id             int                 `json:"id"`
 	DatesLocations map[string][]string `json:"datesLocations"`
 }
 

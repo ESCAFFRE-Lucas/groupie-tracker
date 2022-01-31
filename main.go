@@ -2,16 +2,14 @@ package main
 
 import (
 	"fmt"
-	"groupie-tracker/Artists"
-	"groupie-tracker/Relation"
+	"groupie-tracker/artists"
 	"html/template"
 	"net/http"
 )
 
 func HomePage(w http.ResponseWriter, r *http.Request) {
-	Relation.GetRelations()
 	tmpl := template.Must(template.ParseFiles("index.gohtml"))
-	data := Artists.GetArtists()
+	data := artists.GetArtists()
 	_ = tmpl.Execute(w, data)
 
 }
