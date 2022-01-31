@@ -2,34 +2,41 @@ package Artists
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
 )
 
 type artists struct {
-	Name string `json:"name"`
+	Id           int      `json:"id"`
+	Image        string   `json:"image"`
+	Name         string   `json:"name"`
+	Members      []string `json:"members"`
+	CreationDate int      `json:"creationDate"`
+	FirstAlbum   string   `json:"firstAlbum"`
+	Locations    string   `json:"locations"`
+	ConcertDates string   `json:"concertDates"`
+	Relations    string   `json:"relations"`
 }
 
-func GetArtists() {
+func GetArtists() []artists {
 	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/artists")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer resp.Body.Close()
 
-	names, err := ioutil.ReadAll(resp.Body)
+	groups, err := ioutil.ReadAll(resp.Body)
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
 	var c []artists
-	err = json.Unmarshal(names, &c)
+	err = json.Unmarshal(groups, &c)
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	fmt.Printf("%v\n", c)
+	return c
 }
