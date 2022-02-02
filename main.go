@@ -16,6 +16,15 @@ func HomePage(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func ArtistPage(w http.ResponseWriter, r *http.Request) {
+	tmpl := template.Must(template.ParseFiles("artist-index.gohtml"))
+	data := artists.GetArtists()
+	err := tmpl.Execute(w, data)
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+
 func main() {
 	server := http.NewServeMux()
 
