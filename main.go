@@ -10,8 +10,10 @@ import (
 func HomePage(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("index.gohtml"))
 	data := artists.GetArtists()
-	_ = tmpl.Execute(w, data)
-
+	err := tmpl.Execute(w, data)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 
 func main() {

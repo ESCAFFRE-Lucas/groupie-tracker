@@ -29,7 +29,7 @@ func GetArtists() []structures.Artists {
 		log.Fatal(err)
 	}
 
-	fmt.Printf("%v\n", arrArtists)
+	fmt.Println(arrArtists)
 	utilities.SaveInFile(arrArtists)
 	return arrArtists
 }

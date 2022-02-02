@@ -10,7 +10,7 @@ import (
 	"net/http"
 )
 
-func GetRelations() {
+func GetRelations() structures.Index {
 	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/relation")
 	if err != nil {
 		log.Fatal(err)
@@ -35,4 +35,5 @@ func GetRelations() {
 	}
 
 	fmt.Printf("%v\n", arrRelations)
+	return arrRelations
 }

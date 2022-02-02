@@ -10,7 +10,7 @@ import (
 	"net/http"
 )
 
-func GetDates() {
+func GetDates() structures.Dates {
 	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/dates")
 	if err != nil {
 		log.Fatal(err)
@@ -35,4 +35,5 @@ func GetDates() {
 	}
 
 	fmt.Printf("%v\n", arrDates)
+	return arrDates
 }

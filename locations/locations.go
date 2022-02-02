@@ -9,7 +9,7 @@ import (
 	"net/http"
 )
 
-func GetLocations() {
+func GetLocations() structures.Locations {
 	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/locations")
 	if err != nil {
 		log.Fatal(err)
@@ -29,4 +29,5 @@ func GetLocations() {
 	}
 
 	fmt.Printf("%v\n", arrLocations)
+	return arrLocations
 }

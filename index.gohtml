@@ -11,8 +11,11 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
 <div class="full-page">
     <div class="left-page">
         <div class="name">
-            {{$name := .Id}}
-            <h1>{{$name}}</h1>
+            {{- /*gotype: groupie-tracker/structures.Artists*/ -}}
+            {{ range $artist := .}} {{- /*Take the Artist array with . and stock every artist one by one in $artist*/ -}}
+                {{/* print all image in the page */}}
+                <img src="{{$artist.Image}}">
+            {{end}}
         </div>
     </div>
 </div>
