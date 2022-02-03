@@ -1,9 +1,9 @@
 package main
 
 import (
+	"Groupie-tracker/artists"
+	"Groupie-tracker/structures"
 	"fmt"
-	"groupie-tracker/artists"
-	"groupie-tracker/structures"
 	"html/template"
 	"net/http"
 	"strconv"

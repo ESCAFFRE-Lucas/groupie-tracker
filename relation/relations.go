@@ -1,9 +1,9 @@
 package relation
 
 import (
+	"Groupie-tracker/structures"
 	"encoding/json"
 	"fmt"
-	"groupie-tracker/structures"
 	"io"
 	"io/ioutil"
 	"log"
