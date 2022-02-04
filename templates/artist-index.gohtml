@@ -5,16 +5,18 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
 <head>
     <meta charset="UTF-8">
     <title>Groupie-tracker</title>
-    <link rel="stylesheet" href="public/groupie-style.css">
+    <link rel="stylesheet" href="../public/groupie-style.css">
 </head>
 <body>
 <div class="full-page">
     <div class="left-page">
         <div class="name">
             {{- /*gotype: groupie-tracker/structures.Artists*/ -}}
-            {{ range $artist := .}} {{- /*Take the Artist array with . and stock every artist one by one in $artist*/ -}}
-            {{/* print all image in the page */}}
-            <div> {{$artist}} </div>
+            {{range .}}
+                {{ range $artist := .}} {{- /*Take the Artist array with . and stock every artist one by one in $artist*/ -}}
+                {{/* print all image in the page */}}
+                <div> {{$artist}} </div>
+                {{end}}
             {{end}}
         </div>
     </div>

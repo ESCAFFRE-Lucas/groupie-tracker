@@ -1,6 +1,6 @@
 package structures
 
-type Artists struct {
+type Artist struct {
 	Id           int      `json:"id"`
 	Image        string   `json:"image"`
 	Name         string   `json:"name"`
