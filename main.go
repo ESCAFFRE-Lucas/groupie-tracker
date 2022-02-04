@@ -19,7 +19,7 @@ func HomePage(w http.ResponseWriter, r *http.Request) {
 func ArtistPage(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("templates/artist.gohtml"))
 	fmt.Println(r.URL.Path)
-	artist := artists.GetArtist()
+	artist := artists.GetArtist(w, r)
 	err := tmpl.Execute(w, artist)
 	if err != nil {
 		fmt.Println(err)

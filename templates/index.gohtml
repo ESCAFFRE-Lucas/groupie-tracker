@@ -1,3 +1,4 @@
+{{- /*gotype: groupie-tracker/structures.Artists*/ -}}
 <!DOCTYPE html>
 <!-- This is the main page of the game, where we can play the hangman game and see the attempts,the right letters or
 wrong letters, the hangman and the hidden word, with an input to  choose a letter//-->
@@ -11,7 +12,6 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
 <div class="full-page">
     <div class="left-page">
         <div class="name">
-            {{- /*gotype: groupie-tracker/structures.Artists*/ -}}
             {{ range $artist := .}} {{- /*Take the Artist array with . and stock every artist one by one in $artist*/ -}}
                 {{/* print all image in the page */}}
                 <a href="http://localhost:8000/artist/{{$artist.Id}}">

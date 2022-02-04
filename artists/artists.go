@@ -35,8 +35,8 @@ func GetArtists() []structures.Artist {
 	return arrArtists
 }
 
-func GetArtist() structures.Artist {
-	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/artists/1")
+func GetArtist(w http.ResponseWriter, r *http.Request) structures.Artist {
+	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/artists/" + GetArtistsId(w, r))
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -57,7 +57,7 @@ func GetArtist() structures.Artist {
 	return artist
 }
 
-func GetArtistsById(w http.ResponseWriter, r *http.Request) string {
+func GetArtistsId(w http.ResponseWriter, r *http.Request) string {
 	id := r.URL.Path[len("/artist/"):]
 	if strings.Contains(id, "/") {
 		w.WriteHeader(http.StatusNotFound)
