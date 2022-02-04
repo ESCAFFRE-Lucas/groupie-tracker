@@ -7,10 +7,18 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
     <meta charset="UTF-8">
     <title>Groupie-tracker</title>
     <link rel="stylesheet" href="../public/groupie-style.css">
-
+    <style>
+        h1 {
+            color: black;
+            text-shadow: 2px 2px 30px white;
+            text-align:center;
+            font-family:Brush Script MT;
+            font-size: 100px;
+        }
+    </style>
 </head>
 <body>
-<h1 style="text-align:center;font-family:Brush Script MT;font-size: 100px;">Groupie Tracker</h1>
+<h1>Groupie Tracker</h1>
 <div class="full-page">
     <div class="left-page">
         <div class="name">
@@ -18,6 +26,7 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
                 {{/* print all image in the page */}}
                 <a href="http://localhost:8000/artist/{{$artist.Id}}">
                 <img src="{{$artist.Image}}">
+
                 </a>
             {{end}}
         </div>
