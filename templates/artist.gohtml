@@ -3,12 +3,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{.}}</title>
+    <title>Artist</title>
     <link rel="stylesheet" href="../public/artist.css">
+    <style>
+        h1 {
+            color: black;
+            text-shadow: 2px 2px 30px white;
+            text-align:center;
+            font-family:Brush Script MT;
+            font-size: 100px;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
-<div> Yo </div>
-<div>
-    {{.}} </div>
+<h1>{{.Name}}</h1>
+<img src="{{.Image}}" class="img">
 </body>
 </html>
