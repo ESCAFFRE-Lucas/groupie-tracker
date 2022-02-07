@@ -9,10 +9,10 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
     <link rel="stylesheet" href="../public/groupie-style.css">
     <style>
         h1 {
-            color: black;
-            text-shadow: 2px 2px 30px white;
+            color: white;
+            text-shadow: 2px 2px 30px black;
             text-align:center;
-            font-family:Brush Script MT;
+            font-family: Brush Script MT, serif;
             font-size: 100px;
         }
 
@@ -79,7 +79,7 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
             {{ range $artist := .}} {{- /*Take the Artist array with . and stock every artist one by one in $artist*/ -}}
                 {{/* print all image in the page */}}
                 <a href="http://localhost:8000/artist/{{$artist.Id}}">
-                <img src="{{$artist.Image}}">
+                <img src="{{$artist.Image}}" alt="">
                 </a>
             {{end}}
         </div>

@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Artist</title>
-    <link rel="stylesheet" href="../public/artist.css">
+    <link rel="stylesheet" href="../public/groupie-style.css">
     <style>
+        div{
+            text-align: center;
+            padding : 20px
+        }
         h1 {
             color: black;
             text-shadow: 2px 2px 30px white;
@@ -27,5 +31,11 @@
 <body>
 <h1>{{.Name}}</h1>
 <img src="{{.Image}}" class="img">
+<div>Members: <br>{{.Members}}</div>
+<div>Creation Date: <br>{{.CreationDate}}</div>
+<div>First Album: <br>{{.FirstAlbum}}</div>
+<div>Locations: <br>{{.Locations}}</div>
+<div>Concert Dates: <br>{{.ConcertDates}}</div>
+<div>Relations: <br>{{.Relations}}</div>
 </body>
 </html>
