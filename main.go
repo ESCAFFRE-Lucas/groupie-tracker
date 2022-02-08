@@ -1,8 +1,8 @@
 package main
 
 import (
+	"Groupie-tracker/artists"
 	"fmt"
-	"groupie-tracker/artists"
 	"html/template"
 	"net/http"
 )

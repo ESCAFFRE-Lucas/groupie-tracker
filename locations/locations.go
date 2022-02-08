@@ -1,9 +1,9 @@
 package locations
 
 import (
+	"Groupie-tracker/structures"
 	"encoding/json"
 	"fmt"
-	"groupie-tracker/structures"
 	"io/ioutil"
 	"log"
 	"net/http"

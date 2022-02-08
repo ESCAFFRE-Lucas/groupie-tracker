@@ -1,3 +1,3 @@
-module groupie-tracker
+module Groupie-tracker
 
 go 1.17

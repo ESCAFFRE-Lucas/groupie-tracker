@@ -3,11 +3,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{.}}</title>
-    <link rel="stylesheet" href="../public/artist.css">
+    <title>Artist</title>
+    <link rel="stylesheet" href="../public/groupie-style.css">
+    <style>
+        div{
+            text-align: center;
+            padding : 20px
+        }
+        h1 {
+            color: black;
+            text-shadow: 2px 2px 30px white;
+            text-align:center;
+            font-family:Brush Script MT;
+            font-size: 100px;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
-<div>
-    {{.}} </div>
+<h1>{{.Name}}</h1>
+<img src="{{.Image}}" class="img">
+<div>Members: <br>{{.Members}}</div>
+<div>Creation Date: <br>{{.CreationDate}}</div>
+<div>First Album: <br>{{.FirstAlbum}}</div>
+<div><a href="{{.Relations}}">Places and dates of past and upcoming concerts</a></div>
 </body>
 </html>
