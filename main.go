@@ -30,12 +30,12 @@ func ArtistPage(w http.ResponseWriter, r *http.Request) {
 func main() {
 	server := http.NewServeMux()
 
-	server.HandleFunc("/artist", HomePage)    //Every artist
-	server.HandleFunc("/artist/", ArtistPage) //Single artist
+	server.HandleFunc("/artists", HomePage)    //Every artist
+	server.HandleFunc("/artists/", ArtistPage) //Single artist
 
 	server.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
 	// listen to the port 8000
-	fmt.Println("server listening on http://localhost:8000/artist")
+	fmt.Println("server listening on http://localhost:8000/artists")
 
 	_ = http.ListenAndServe(":8000", server)
 }

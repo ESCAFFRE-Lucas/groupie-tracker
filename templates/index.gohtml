@@ -14,7 +14,7 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
         <div class="name">
             {{ range $artist := .}} {{- /*Take the Artist array with . and stock every artist one by one in $artist*/ -}}
                 {{/* print all image in the page */}}
-                <a href="http://localhost:8000/artist/{{$artist.Id}}">
+                <a href="http://localhost:8000/artists/{{$artist.Id}}">
                 <img src="{{$artist.Image}}">
                 </a>
             {{end}}

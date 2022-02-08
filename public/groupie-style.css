@@ -1,7 +1,27 @@
 body {
-    background: linear-gradient(to right, #434343, #000000);
+    background: linear-gradient(to right, cyan, red);
+    padding: 20px;
 }
 
-h1 {
-    color: white;
+#searchbar{
+    margin-left: 15%;
+    padding:15px;
+    border-radius: 10px;
+}
+
+input[type=text] {
+    width: 30%;
+    -webkit-transition: width 0.15s ease-in-out;
+    transition: width 0.15s ease-in-out;
+}
+
+/* When the input field gets focus,
+     change its width to 100% */
+input[type=text]:focus {
+    width: 70%;
+}
+
+#list{
+    font-size:  1.5em;
+    margin-left: 90px;
 }
