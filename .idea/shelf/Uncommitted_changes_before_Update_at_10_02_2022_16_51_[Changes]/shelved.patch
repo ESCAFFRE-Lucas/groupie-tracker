@@ -1,0 +1,126 @@
+Index: main.go
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package main\r\n\r\nimport (\r\n\t\"Groupie-tracker/artists\"\r\n\t\"fmt\"\r\n\t\"html/template\"\r\n\t\"net/http\"\r\n)\r\n\r\nfunc HomePage(w http.ResponseWriter, r *http.Request) {\r\n\ttmpl := template.Must(template.ParseFiles(\"templates/index.gohtml\"))\r\n\tdata := artists.GetArtists()\r\n\terr := tmpl.Execute(w, data)\r\n\tif err != nil {\r\n\t\tfmt.Println(err)\r\n\t}\r\n}\r\n\r\nfunc ArtistPage(w http.ResponseWriter, r *http.Request) {\r\n\ttmpl := template.Must(template.ParseFiles(\"templates/artist.gohtml\"))\r\n\tfmt.Println(r.URL.Path)\r\n\tartist := artists.GetArtist(w, r)\r\n\terr := tmpl.Execute(w, artist)\r\n\tif err != nil {\r\n\t\tfmt.Println(err)\r\n\t}\r\n\r\n}\r\n\r\nfunc AboutusPage(w http.ResponseWriter, r *http.Request) {\r\n\ttmpl := template.Must(template.ParseFiles(\"templates/aboutus.gohtml\"))\r\n\tfmt.Println(r.URL.Path)\r\n\terr := tmpl.Execute(w, nil)\r\n\tif err != nil {\r\n\t\tfmt.Println(err)\r\n\t}\r\n\r\n}\r\n\r\nfunc main() {\r\n\tserver := http.NewServeMux()\r\n\r\n\tserver.HandleFunc(\"/artist\", HomePage)     //Every artist\r\n\tserver.HandleFunc(\"/artist/\", ArtistPage)  //Single artist\r\n\tserver.HandleFunc(\"/aboutus\", AboutusPage) //About us page\r\n\r\n\tserver.Handle(\"/public/\", http.StripPrefix(\"/public/\", http.FileServer(http.Dir(\"./public\"))))\r\n\t// listen to the port 8000\r\n\tfmt.Println(\"server listening on http://localhost:8000/artist\")\r\n\r\n\t_ = http.ListenAndServe(\":8000\", server)\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.go b/main.go
+--- a/main.go	(revision 8363f17025945edc022f4cc1ee3b8c6fbbdd8557)
++++ b/main.go	(date 1644508140669)
+@@ -1,8 +1,8 @@
+ package main
+ 
+ import (
+-	"Groupie-tracker/artists"
+ 	"fmt"
++	"groupie-tracker/artists"
+ 	"html/template"
+ 	"net/http"
+ )
+Index: utilities/file-manager.go
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package utilities\r\n\r\nimport (\r\n\t\"Groupie-tracker/structures\"\r\n\t\"encoding/json\"\r\n\t\"io/ioutil\"\r\n)\r\n\r\nconst GroupieDataFile = \"artists.json\"\r\n\r\n//The function below permit to save the progress of the game in a json file\r\nfunc SaveInFile(data []structures.Artist) { //take and return the json encoding of the structure\r\n\tjsonData, _ := json.MarshalIndent(data, \"\", \"\") //return the json encoding of data either structure.Stock structure\r\n\terr := ioutil.WriteFile(GroupieDataFile, jsonData, 0644)\r\n\tif err != nil {\r\n\t\treturn\r\n\t}\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/utilities/file-manager.go b/utilities/file-manager.go
+--- a/utilities/file-manager.go	(revision 8363f17025945edc022f4cc1ee3b8c6fbbdd8557)
++++ b/utilities/file-manager.go	(date 1644508218114)
+@@ -1,8 +1,8 @@
+ package utilities
+ 
+ import (
+-	"Groupie-tracker/structures"
+ 	"encoding/json"
++	"groupie-tracker/structures"
+ 	"io/ioutil"
+ )
+ 
+Index: relation/relations.go
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package relation\r\n\r\nimport (\r\n\t\"Groupie-tracker/structures\"\r\n\t\"encoding/json\"\r\n\t\"fmt\"\r\n\t\"io\"\r\n\t\"io/ioutil\"\r\n\t\"log\"\r\n\t\"net/http\"\r\n)\r\n\r\nfunc GetRelations() structures.Index {\r\n\tresp, err := http.Get(\"https://groupietrackers.herokuapp.com/api/relation\")\r\n\tif err != nil {\r\n\t\tlog.Fatal(err)\r\n\t}\r\n\tdefer func(Body io.ReadCloser) {\r\n\t\terr := Body.Close()\r\n\t\tif err != nil {\r\n\r\n\t\t}\r\n\t}(resp.Body)\r\n\r\n\trelation, err := ioutil.ReadAll(resp.Body)\r\n\r\n\tif err != nil {\r\n\t\tlog.Fatal(err)\r\n\t}\r\n\r\n\tvar arrRelations structures.Index\r\n\terr = json.Unmarshal(relation, &arrRelations)\r\n\tif err != nil {\r\n\t\tlog.Fatal(err)\r\n\t}\r\n\r\n\tfmt.Printf(\"%v\\n\", arrRelations)\r\n\treturn arrRelations\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/relation/relations.go b/relation/relations.go
+--- a/relation/relations.go	(revision 8363f17025945edc022f4cc1ee3b8c6fbbdd8557)
++++ b/relation/relations.go	(date 1644508211882)
+@@ -1,9 +1,9 @@
+ package relation
+ 
+ import (
+-	"Groupie-tracker/structures"
+ 	"encoding/json"
+ 	"fmt"
++	"groupie-tracker/structures"
+ 	"io"
+ 	"io/ioutil"
+ 	"log"
+Index: locations/locations.go
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package locations\r\n\r\nimport (\r\n\t\"Groupie-tracker/structures\"\r\n\t\"encoding/json\"\r\n\t\"fmt\"\r\n\t\"io/ioutil\"\r\n\t\"log\"\r\n\t\"net/http\"\r\n)\r\n\r\nfunc GetLocations() structures.Locations {\r\n\tresp, err := http.Get(\"https://groupietrackers.herokuapp.com/api/locations\")\r\n\tif err != nil {\r\n\t\tlog.Fatal(err)\r\n\t}\r\n\tdefer resp.Body.Close()\r\n\r\n\tlocation, err := ioutil.ReadAll(resp.Body)\r\n\r\n\tif err != nil {\r\n\t\tlog.Fatal(err)\r\n\t}\r\n\r\n\tvar arrLocations structures.Locations\r\n\terr = json.Unmarshal(location, &arrLocations)\r\n\tif err != nil {\r\n\t\tlog.Fatal(err)\r\n\t}\r\n\r\n\tfmt.Printf(\"%v\\n\", arrLocations)\r\n\treturn arrLocations\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/locations/locations.go b/locations/locations.go
+--- a/locations/locations.go	(revision 8363f17025945edc022f4cc1ee3b8c6fbbdd8557)
++++ b/locations/locations.go	(date 1644508211825)
+@@ -1,9 +1,9 @@
+ package locations
+ 
+ import (
+-	"Groupie-tracker/structures"
+ 	"encoding/json"
+ 	"fmt"
++	"groupie-tracker/structures"
+ 	"io/ioutil"
+ 	"log"
+ 	"net/http"
+Index: dates/dates.go
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package dates\r\n\r\nimport (\r\n\t\"Groupie-tracker/structures\"\r\n\t\"encoding/json\"\r\n\t\"fmt\"\r\n\t\"io\"\r\n\t\"io/ioutil\"\r\n\t\"log\"\r\n\t\"net/http\"\r\n)\r\n\r\nfunc GetDates() structures.Dates {\r\n\tresp, err := http.Get(\"https://groupietrackers.herokuapp.com/api/dates\")\r\n\tif err != nil {\r\n\t\tlog.Fatal(err)\r\n\t}\r\n\tdefer func(Body io.ReadCloser) {\r\n\t\terr := Body.Close()\r\n\t\tif err != nil {\r\n\r\n\t\t}\r\n\t}(resp.Body)\r\n\r\n\tdate, err := ioutil.ReadAll(resp.Body)\r\n\r\n\tif err != nil {\r\n\t\tlog.Fatal(err)\r\n\t}\r\n\r\n\tvar arrDates structures.Dates\r\n\terr = json.Unmarshal(date, &arrDates)\r\n\tif err != nil {\r\n\t\tlog.Fatal(err)\r\n\t}\r\n\r\n\tfmt.Printf(\"%v\\n\", arrDates)\r\n\treturn arrDates\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/dates/dates.go b/dates/dates.go
+--- a/dates/dates.go	(revision 8363f17025945edc022f4cc1ee3b8c6fbbdd8557)
++++ b/dates/dates.go	(date 1644508211846)
+@@ -1,9 +1,9 @@
+ package dates
+ 
+ import (
+-	"Groupie-tracker/structures"
+ 	"encoding/json"
+ 	"fmt"
++	"groupie-tracker/structures"
+ 	"io"
+ 	"io/ioutil"
+ 	"log"
+Index: artists/artists.go
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package artists\r\n\r\nimport (\r\n\t\"Groupie-tracker/structures\"\r\n\t\"Groupie-tracker/utilities\"\r\n\t\"encoding/json\"\r\n\t\"fmt\"\r\n\t\"io/ioutil\"\r\n\t\"log\"\r\n\t\"net/http\"\r\n\t\"strings\"\r\n)\r\n\r\nfunc GetArtists() []structures.Artist {\r\n\tresp, err := http.Get(\"https://groupietrackers.herokuapp.com/api/artists\")\r\n\tif err != nil {\r\n\t\tlog.Fatal(err)\r\n\t}\r\n\tdefer resp.Body.Close()\r\n\r\n\tnames, err := ioutil.ReadAll(resp.Body)\r\n\r\n\tif err != nil {\r\n\t\tlog.Fatal(err)\r\n\t}\r\n\r\n\tvar arrArtists []structures.Artist\r\n\terr = json.Unmarshal(names, &arrArtists)\r\n\tif err != nil {\r\n\t\tlog.Fatal(err)\r\n\t}\r\n\r\n\tfmt.Println(arrArtists)\r\n\tutilities.SaveInFile(arrArtists)\r\n\treturn arrArtists\r\n}\r\n\r\nfunc GetArtist(w http.ResponseWriter, r *http.Request) structures.Artist {\r\n\tresp, err := http.Get(\"https://groupietrackers.herokuapp.com/api/artists/\" + GetArtistsId(w, r))\r\n\tif err != nil {\r\n\t\tfmt.Println(err)\r\n\t}\r\n\r\n\tstrArtist, err := ioutil.ReadAll(resp.Body)\r\n\r\n\tif err != nil {\r\n\t\tfmt.Println(err)\r\n\t}\r\n\r\n\tvar artist structures.Artist\r\n\terr = json.Unmarshal(strArtist, &artist)\r\n\tif err != nil {\r\n\t\tfmt.Println(err)\r\n\t}\r\n\r\n\tfmt.Println(artist)\r\n\treturn artist\r\n}\r\n\r\nfunc GetArtistsId(w http.ResponseWriter, r *http.Request) string {\r\n\tid := r.URL.Path[len(\"/artists/\"):]\r\n\tif strings.Contains(id, \"/\") {\r\n\t\tw.WriteHeader(http.StatusNotFound)\r\n\t\t_, _ = w.Write([]byte(\"degage en*****\"))\r\n\t\treturn \"\"\r\n\t}\r\n\treturn id\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/artists/artists.go b/artists/artists.go
+--- a/artists/artists.go	(revision 8363f17025945edc022f4cc1ee3b8c6fbbdd8557)
++++ b/artists/artists.go	(date 1644508211860)
+@@ -1,10 +1,10 @@
+ package artists
+ 
+ import (
+-	"Groupie-tracker/structures"
+-	"Groupie-tracker/utilities"
+ 	"encoding/json"
+ 	"fmt"
++	"groupie-tracker/structures"
++	"groupie-tracker/utilities"
+ 	"io/ioutil"
+ 	"log"
+ 	"net/http"
