@@ -1,8 +1,9 @@
 package main
 
 import (
-	"Groupie-tracker/artists"
 	"fmt"
+	"groupie-tracker/artists"
+	"groupie-tracker/relation"
 	"html/template"
 	"net/http"
 )
@@ -24,7 +25,16 @@ func ArtistPage(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
+}
 
+func RelationPage(w http.ResponseWriter, r *http.Request) {
+	tmpl := template.Must(template.ParseFiles("templates/relation.gohtml"))
+	fmt.Println(r.URL.Path)
+	groupRelation := relation.GetRelation(w, r)
+	err := tmpl.Execute(w, groupRelation)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 
 func AboutusPage(w http.ResponseWriter, r *http.Request) {
@@ -40,13 +50,14 @@ func AboutusPage(w http.ResponseWriter, r *http.Request) {
 func main() {
 	server := http.NewServeMux()
 
-	server.HandleFunc("/artist", HomePage)     //Every artist
-	server.HandleFunc("/artist/", ArtistPage)  //Single artist
+	server.HandleFunc("/artists", HomePage)       //Every artist
+	server.HandleFunc("/artists/", ArtistPage)    //Single artist
+	server.HandleFunc("/relation/", RelationPage) // every concert's dates and locations
 	server.HandleFunc("/aboutus", AboutusPage) //About us page
 
 	server.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
 	// listen to the port 8000
-	fmt.Println("server listening on http://localhost:8000/artist")
+	fmt.Println("server listening on http://localhost:8000/artists")
 
 	_ = http.ListenAndServe(":8000", server)
 }

@@ -1,39 +1,45 @@
 package relation
 
 import (
-	"Groupie-tracker/structures"
 	"encoding/json"
 	"fmt"
-	"io"
+	"groupie-tracker/structures"
 	"io/ioutil"
-	"log"
 	"net/http"
+	"strings"
 )
 
-func GetRelations() structures.Index {
-	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/relation")
+func GetRelation(w http.ResponseWriter, r *http.Request) structures.Relations {
+	test := GetRelationsId(w, r)
+	fmt.Println(test)
+	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/relation/" + GetRelationsId(w, r))
 	if err != nil {
-		log.Fatal(err)
-	}
-	defer func(Body io.ReadCloser) {
-		err := Body.Close()
-		if err != nil {
-
-		}
-	}(resp.Body)
-
-	relation, err := ioutil.ReadAll(resp.Body)
-
-	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
 	}
 
-	var arrRelations structures.Index
-	err = json.Unmarshal(relation, &arrRelations)
+	strRelations, err := ioutil.ReadAll(resp.Body)
+
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err)
 	}
 
-	fmt.Printf("%v\n", arrRelations)
-	return arrRelations
+	var relation structures.Relations
+	fmt.Println(relation)
+	err = json.Unmarshal(strRelations, &relation)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(relation)
+	return relation
+}
+
+func GetRelationsId(w http.ResponseWriter, r *http.Request) string {
+	id := r.URL.Path[len("/relation/"):]
+	if strings.Contains(id, "/") {
+		w.WriteHeader(http.StatusNotFound)
+		_, _ = w.Write([]byte("don't go here man..."))
+		return ""
+	}
+	return id
 }
