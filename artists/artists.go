@@ -1,10 +1,10 @@
 package artists
 
 import (
-	"Groupie-tracker/structures"
-	"Groupie-tracker/utilities"
 	"encoding/json"
 	"fmt"
+	"groupie-tracker/structures"
+	"groupie-tracker/utilities"
 	"io/ioutil"
 	"log"
 	"net/http"

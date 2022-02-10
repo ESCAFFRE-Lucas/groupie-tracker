@@ -1,8 +1,8 @@
 package utilities
 
 import (
-	"Groupie-tracker/structures"
 	"encoding/json"
+	"groupie-tracker/structures"
 	"io/ioutil"
 )
 
