@@ -27,11 +27,22 @@ func ArtistPage(w http.ResponseWriter, r *http.Request) {
 
 }
 
+func AboutusPage(w http.ResponseWriter, r *http.Request) {
+	tmpl := template.Must(template.ParseFiles("templates/aboutus.gohtml"))
+	fmt.Println(r.URL.Path)
+	err := tmpl.Execute(w, nil)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+}
+
 func main() {
 	server := http.NewServeMux()
 
-	server.HandleFunc("/artist", HomePage)    //Every artist
-	server.HandleFunc("/artist/", ArtistPage) //Single artist
+	server.HandleFunc("/artist", HomePage)     //Every artist
+	server.HandleFunc("/artist/", ArtistPage)  //Single artist
+	server.HandleFunc("/aboutus", AboutusPage) //About us page
 
 	server.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
 	// listen to the port 8000
