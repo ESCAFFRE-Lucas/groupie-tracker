@@ -58,7 +58,7 @@ func GetArtist(w http.ResponseWriter, r *http.Request) structures.Artist {
 }
 
 func GetArtistsId(w http.ResponseWriter, r *http.Request) string {
-	id := r.URL.Path[len("/artist/"):]
+	id := r.URL.Path[len("/artists/"):]
 	if strings.Contains(id, "/") {
 		w.WriteHeader(http.StatusNotFound)
 		_, _ = w.Write([]byte("degage en*****"))
