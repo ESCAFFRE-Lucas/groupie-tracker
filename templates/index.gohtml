@@ -50,8 +50,7 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
             border: none;
             font-size: 17px;
         }
-        /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
-        @media screen and (max-width: 600px) {
+        @media only screen and (max-width:800px) {
             .searchbar a, .searchbar input[type=text] {
                 float: none;
                 display: block;
@@ -68,18 +67,18 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
     </style>
 </head>
 <body>
-<div class="searchbar">
+<div class="searchbar" >
     <a href="#about">About Us</a>
     <input type="text" placeholder="Search an artist">
 </div>
-<h1>Groupie Tracker</h1>
+<h1 style="font-size:10vw">Groupie Tracker</h1>
 <div class="full-page">
     <div class="left-page">
         <div class="name">
             {{ range $artist := .}} {{- /*Take the Artist array with . and stock every artist one by one in $artist*/ -}}
                 {{/* print all image in the page */}}
                 <a href="http://localhost:8000/artist/{{$artist.Id}}">
-                <img src="{{$artist.Image}}" alt="">
+                <img src="{{$artist.Image}}" style="width:16%;" alt="">
                 </a>
             {{end}}
         </div>
