@@ -8,10 +8,48 @@ img {
 }
 
 img:hover {
-    -webkit-filter: brightness(10%);
+    -webkit-filter: brightness(25%);
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
     transition: all 0.5s ease;
+}
+
+ /*Style the search box */
+#mySearch {
+    width: 20%;
+    font-size: 18px;
+    padding: 11px;
+    border: 1px solid #ddd;
+}
+
+/* Style the navigation menu */
+.name {
+    list-style-type: none;
+    margin: 0;
+}
+
+ /*Style the navigation links*/
+.name li a {
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+    display: flex; /* contexte sur le parent */
+    flex-direction: column; /* direction d'affichage verticale */
+    justify-content: center;
+}
+
+.name li {
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+
+.name li a:hover {
+    background-color: #eee;
+}
+
+.artistName {
+    position: relative;
 }

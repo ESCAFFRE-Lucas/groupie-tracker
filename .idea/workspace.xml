@@ -4,11 +4,29 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4932b2c5-e6ba-4a11-9a46-eea86afe4bdf" name="Changes" comment="made the About Us page" />
+    <list default="true" id="4932b2c5-e6ba-4a11-9a46-eea86afe4bdf" name="Changes" comment="creation of the relation page, code style">
+      <change afterPath="$PROJECT_DIR$/public/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/libs/font-awesome/fonts/notosansjp/notosansjp-black-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/relation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_02_2022_16_51__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_02_2022_16_51__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/groupie-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/groupie-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/relation.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/relation.gohtml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../../../../../Program Files/Go" />
   <component name="Git.Settings">
@@ -35,6 +53,15 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lucas\OneDrive\Documents\Ynov Campus\Ytrack\groupie-tracker\public" />
+      <recent name="C:\Users\Lucas\OneDrive\Documents\Ynov Campus\Ytrack\groupie-tracker\public\libs\font-awesome\fonts\amadeus_regular" />
+      <recent name="C:\Users\Lucas\OneDrive\Documents\Ynov Campus\Ytrack\groupie-tracker\public\libs\font-awesome\fonts\notosansjp" />
+      <recent name="C:\Users\Lucas\OneDrive\Documents\Ynov Campus\Ytrack\groupie-tracker\public\libs\font-awesome\fonts" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">

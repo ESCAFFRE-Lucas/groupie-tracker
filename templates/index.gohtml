@@ -7,6 +7,7 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
     <meta charset="UTF-8">
     <title>Groupie-tracker</title>
     <link rel="stylesheet" href="../public/groupie-style.css">
+    <script src="../public/index.js"></script>
     <style>
         h1 {
             color: white;
@@ -69,19 +70,22 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
 <body>
 <div class="searchbar" >
     <a href="http://localhost:8000/aboutus">About Us</a>
-    <input type="text" placeholder="Search an artist">
+    <input type="text" id="mySearch" onkeyup="searchMenu()" placeholder="Search an artist" title="Search an artist">
 </div>
 <h1 style="font-size:10vw">Groupie Tracker</h1>
 <div class="full-page">
     <div class="left-page">
-        <div class="name">
+        <ul class="name">
             {{ range $artist := .}} {{- /*Take the Artist array with . and stock every artist one by one in $artist*/ -}}
                 {{/* print all image in the page */}}
-                <a href="http://localhost:8000/artists/{{$artist.Id}}">
-                <img src="{{$artist.Image}}" style="width:16%;" alt="">
-                </a>
+                <li>
+                    <a href="http://localhost:8000/artists/{{$artist.Id}}">
+                        <img src="{{$artist.Image}}"  alt="">
+                        <div class="artistName"> {{$artist.Name}}</div>
+                    </a>
+                </li>
             {{end}}
-        </div>
+        </ul>
     </div>
 </div>
 </body>
