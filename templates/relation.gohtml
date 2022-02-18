@@ -12,12 +12,8 @@
 <header> <h1> Dates and locations of concerts </h1> </header>
 <div id="map"></div>
 {{ range  $relation, $values := .DatesLocations}}
-    <a href="http://maps.google.com/maps/places/?q={{$relation}}&output=xml&oe=utf8&key=AIzaSyAcvhLoYW1u4GBI0h_kVT0e5L6K05kuB0E"></a>
-    <div> Dates and Locations : <br>{{$relation}} : {{$values}} </div>
+    <div> Dates and Locations : </div>
+    <div> <a href="https://www.google.fr/maps/place/{{$relation}}">{{$relation}} : {{$values}} </a></div>
 {{end}}
 </body>
-<script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcvhLoYW1u4GBI0h_kVT0e5L6K05kuB0E&callback=initMap&v=weekly"
-        async
-></script>
 </html>
