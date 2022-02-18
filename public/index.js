@@ -19,7 +19,7 @@ function searchMenu() {
     // Loop through all list items, and hide those who don't match the search query
     for ( let i = 0; i < listItems.length; i++) {
         let a = listItems[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -2) {
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
             listItems[i].style.display = "";
         } else {
             listItems[i].style.display = "none";

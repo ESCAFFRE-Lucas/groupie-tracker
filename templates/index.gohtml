@@ -43,7 +43,7 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
             color: black;
         }
         /* Style the search box inside the navigation bar */
-        .searchbar input[type=text] {
+        .searchbar input[type=search] {
             float: right;
             padding: 6px;
             margin-top: 8px;
@@ -52,7 +52,7 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
             font-size: 17px;
         }
         @media only screen and (max-width:800px) {
-            .searchbar a, .searchbar input[type=text] {
+            .searchbar a, .searchbar input[type=search] {
                 float: none;
                 display: block;
                 text-align: left;
@@ -61,7 +61,7 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
                 padding: 14px;
             }
 
-            .searchbar input[type=text] {
+            .searchbar input[type=search] {
                 border: 1px solid #ccc;
             }
         }
@@ -70,23 +70,21 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
 <body>
 <div class="searchbar" >
     <a href="http://localhost:8000/aboutus">About Us</a>
-    <input type="text" id="mySearch" onkeyup="searchMenu()" placeholder="Search an artist" title="Search an artist">
+    <input type="search" id="mySearch" onkeyup="searchMenu()" placeholder="Search an artist" title="Search an artist">
 </div>
 <h1 style="font-size:10vw">Groupie Tracker</h1>
 <div class="full-page">
-    <div class="left-page">
-        <ul class="name">
-            {{ range $artist := .}} {{- /*Take the Artist array with . and stock every artist one by one in $artist*/ -}}
-                {{/* print all image in the page */}}
-                <li>
-                    <a href="http://localhost:8000/artists/{{$artist.Id}}">
-                        <img src="{{$artist.Image}}" alt="">
-                        <div class="artistName"> {{$artist.Name}}</div>
-                    </a>
-                </li>
-            {{end}}
-        </ul>
-    </div>
+    <ul class="name">
+        {{ range $artist := .}} {{- /*Take the Artist array with . and stock every artist one by one in $artist*/ -}}
+            {{/* print all image in the page */}}
+            <li>
+                <a href="http://localhost:8000/artists/{{$artist.Id}}">
+                    <img src="{{$artist.Image}}" alt="">
+                    <div class="artistName"> {{$artist.Name}}</div>
+                </a>
+            </li>
+        {{end}}
+    </ul>
 </div>
 </body>
 </html>

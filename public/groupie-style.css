@@ -49,6 +49,6 @@ img:hover {
     background-color: #eee;
 }
 
-.artistName {
-    position: relative;
+.full-page {
+    justify-content: center;
 }
