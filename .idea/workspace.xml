@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4932b2c5-e6ba-4a11-9a46-eea86afe4bdf" name="Changes" comment="try to use google maps API, finish the search bar, formatting the page, and try to change the fonts of the text, creation of the js file">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_02_2022_16_51_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_02_2022_16_51__Changes_.xml" beforeDir="false" />
+    <list default="true" id="05cc9bc8-89ac-4ebf-b5fd-54f73d11172a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/groupie-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/groupie-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/aboutus.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/aboutus.gohtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.gohtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/relation.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/relation.gohtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,6 +97,10 @@
       <framework value="gotest" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Go Build.go build groupie-tracker (1)" />
+      <item itemvalue="Go Build.go build groupie-tracker" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build groupie-tracker (1)" />
