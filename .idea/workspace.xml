@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05cc9bc8-89ac-4ebf-b5fd-54f73d11172a" name="Changes" comment="click on location redirect on tha google maps page (temporary)">
+      <change afterPath="$PROJECT_DIR$/public/artist.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/artist.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/artist.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/groupie-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/groupie-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/relation.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/relation.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/artist.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/artist.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/relation.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/relation.gohtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

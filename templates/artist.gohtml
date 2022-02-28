@@ -5,39 +5,17 @@
     <meta charset="UTF-8">
     <title>Artist</title>
     <link rel="stylesheet" href="../public/artist.css">
-    <style>
-        div {
-            text-align: center;
-            padding: 20px
-        }
-
-        h1 {
-            color: black;
-            text-shadow: 2px 2px 30px white;
-            text-align: center;
-            font-family: Brush Script MT;
-            font-size: 100px;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        img {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    </style>
+    <script src="../public/artist.js"></script>
 </head>
 <body>
 <h1>{{.Name}}</h1>
-<img src="{{.Image}}" id="groupImage" alt="" height="10%">
-<div>Members:</div>
+<img src="{{.Image}}" id="groupImage" alt="" height="20%">
+<div> Members: </div>
+<div class="grid">
     {{ range  $artist := .Members}}
-    <div><a href="https://fr.wikipedia.org/wiki/{{$artist}}">{{$artist}}</a></div>
+        <div><a href="https://fr.wikipedia.org/wiki/{{$artist}}">{{$artist}}</a></div>
     {{end}}
+</div>
 <div>Creation Date: <br>{{.CreationDate}}</div>
 <div>First Album: <br>{{.FirstAlbum}}</div>
 <div><a href="http://localhost:8000/relation/{{.Id}}">Places and dates of past and upcoming concerts</a></div>

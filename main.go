@@ -53,11 +53,14 @@ func main() {
 	server.HandleFunc("/artists", HomePage)       //Every artist
 	server.HandleFunc("/artists/", ArtistPage)    //Single artist
 	server.HandleFunc("/relation/", RelationPage) // every concert's dates and locations
-	server.HandleFunc("/aboutus", AboutusPage) //About us page
+	server.HandleFunc("/aboutus", AboutusPage)    //About us page
 
 	server.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
 	// listen to the port 8000
 	fmt.Println("server listening on http://localhost:8000/artists")
 
-	_ = http.ListenAndServe(":8000", server)
+	err := http.ListenAndServe(":8000", server)
+	if err != nil {
+		fmt.Println(err)
+	}
 }

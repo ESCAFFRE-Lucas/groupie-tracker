@@ -20,9 +20,18 @@ function searchMenu() {
     for ( let i = 0; i < listItems.length; i++) {
         let a = listItems[i].getElementsByTagName("a")[0];
         if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            listItems[i].style.display = "";
+            listItems[i].style.display = "unset";
         } else {
             listItems[i].style.display = "none";
         }
+    }
+}
+
+function Menu() {
+    let x = document.getElementById("myMenu");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
     }
 }

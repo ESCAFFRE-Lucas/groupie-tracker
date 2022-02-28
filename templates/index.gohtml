@@ -25,7 +25,9 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
         /* Add a dark gray background color to the top navigation bar */
         .searchbar {
             overflow: hidden;
-            background-color: #464646;
+            background-color: #021D40;
+            display: grid;
+            grid-template-columns: 0.1fr 0.8fr 0.1fr;
         }
         /* Style the links inside the navigation bar */
         .searchbar a {
@@ -44,11 +46,11 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
         }
         /* Style the search box inside the navigation bar */
         .searchbar input[type=search] {
-            float: right;
             padding: 6px;
             margin-top: 8px;
             margin-right: 16px;
             border: none;
+            margin-bottom: 10px;
             font-size: 17px;
         }
         @media only screen and (max-width:800px) {
@@ -71,6 +73,10 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
 <div class="searchbar" >
     <a href="http://localhost:8000/aboutus">About Us</a>
     <input type="search" id="mySearch" onkeyup="searchMenu()" placeholder="Search an artist" title="Search an artist">
+    <button onclick="Menu()">Try it</button>
+</div>
+<div id="myMenu">
+    This is my DIV element.
 </div>
 <h1 style="font-size:10vw">Groupie Tracker</h1>
 <div class="full-page">

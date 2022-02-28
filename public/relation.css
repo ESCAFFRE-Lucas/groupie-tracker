@@ -39,3 +39,8 @@ header {
 #map {
     height: 100%;
 }
+
+.dateLoc {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

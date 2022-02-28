@@ -11,9 +11,16 @@
 <body onload="initMap()">
 <header> <h1> Dates and locations of concerts </h1> </header>
 <div id="map"></div>
+<div class="dateLoc">
+    <div>Locations :</div>
+    <div>Dates :</div>
+</div>
 {{ range  $relation, $values := .DatesLocations}}
-    <div> Dates and Locations : </div>
-    <div> <a href="https://www.google.fr/maps/place/{{$relation}}">{{$relation}} : {{$values}} </a></div>
+    {{range $key, $value := $values}}
+        <div class="dateLoc"> <a href="https://www.google.fr/maps/place/{{$relation}}">{{$relation}} :</a>
+            {{$value}}
+        </div>
+    {{end}}
 {{end}}
 </body>
 </html>
