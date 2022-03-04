@@ -3,6 +3,8 @@ body {
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 @keyframes gradient {
@@ -15,6 +17,46 @@ body {
     100% {
         background-position: 0% 50%;
     }
+}
+
+h1 {
+    color: white;
+    text-shadow: 2px 2px 30px black;
+    text-align:center;
+    font-family: Brush Script MT, serif;
+    font-size: 100px;
+}
+
+/* Add a dark gray background color to the top navigation bar */
+.searchbar {
+    overflow: hidden;
+    background-color: #021D40;
+    display: grid;
+    grid-template-columns: 0.1fr 0.8fr 0.1fr;
+}
+/* Style the links inside the navigation bar */
+.searchbar a {
+    float: left;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+/* Change the color of links on hover */
+.searchbar a:hover {
+    background-color: #0c89bb;
+    color: black;
+}
+/* Style the search box inside the navigation bar */
+.searchbar input[type=search] {
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 16px;
+    border: none;
+    margin-bottom: 10px;
+    font-size: 17px;
 }
 
 img {
@@ -93,9 +135,25 @@ button {
     margin-top: 10px;
 }
 
-@media (max-width: 1000px) {
-    #mySearch {
-        display: none;
+
+@media (max-width: 1180px) {
+    .name {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .searchbar a, .searchbar input[type=search] {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+
+    .searchbar input[type=search] {
+        border: 1px solid #ccc;
     }
 }
 
