@@ -66,7 +66,6 @@ img:hover {
 }
 
 #myMenu {
-    display: none;
     width: 100%;
     padding: 20px 0;
     text-align: center;
@@ -78,4 +77,9 @@ button {
     background-color: transparent;
     border: none;
     color: white;
+    cursor: pointer;
+}
+
+#dateCreation {
+    padding-right: 10%;
 }

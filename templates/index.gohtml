@@ -73,10 +73,17 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
 <div class="searchbar" >
     <a href="http://localhost:8000/aboutus">About Us</a>
     <input type="search" id="mySearch" onkeyup="searchMenu()" placeholder="Search an artist" title="Search an artist">
-    <button onclick="Menu()">Try it</button>
+    <button onclick="Menu()">Filter</button>
 </div>
-<div id="myMenu">
-    This is my DIV element.
+<div id="myMenu" style="display:none">
+    <div id="dateCreation">
+        Date of creation :
+        <input id="date" type="date" value="">
+    </div>
+    <div>
+        Date of first album :
+        <input id="date" type="date" value="">
+    </div>
 </div>
 <h1 style="font-size:10vw">Groupie Tracker</h1>
 <div class="full-page">

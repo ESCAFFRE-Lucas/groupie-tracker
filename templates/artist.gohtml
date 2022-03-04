@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <title>Artist</title>
     <link rel="stylesheet" href="../public/artist.css">
-    <script src="../public/artist.js"></script>
 </head>
 <body>
-<h1>{{.Name}}</h1>
+<h1 id="api">{{.Name}}</h1>
 <img src="{{.Image}}" id="groupImage" alt="" height="20%">
 <div> Members: </div>
 <div class="grid">
@@ -18,6 +17,11 @@
 </div>
 <div>Creation Date: <br>{{.CreationDate}}</div>
 <div>First Album: <br>{{.FirstAlbum}}</div>
+
+<div id="video">
+</div>
+
 <div><a href="http://localhost:8000/relation/{{.Id}}">Places and dates of past and upcoming concerts</a></div>
+<script src="../public/artist.js"></script>
 </body>
 </html>
