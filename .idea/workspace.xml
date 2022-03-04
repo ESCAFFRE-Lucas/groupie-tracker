@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05cc9bc8-89ac-4ebf-b5fd-54f73d11172a" name="Changes" comment="creation of a another div to do the filter bonus and optimisation of relation page">
+    <list default="true" id="05cc9bc8-89ac-4ebf-b5fd-54f73d11172a" name="Changes" comment="youtube api finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/artist.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/artist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/groupie-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/groupie-style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/artist.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/artist.gohtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.gohtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,7 +147,8 @@
     <MESSAGE value="click on relation redirect on tha google maps page (temporary)" />
     <MESSAGE value="click on location redirect on tha google maps page (temporary)" />
     <MESSAGE value="creation of a another div to do the filter bonus and optimisation of relation page" />
-    <option name="LAST_COMMIT_MESSAGE" value="creation of a another div to do the filter bonus and optimisation of relation page" />
+    <MESSAGE value="youtube api finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="youtube api finished" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
