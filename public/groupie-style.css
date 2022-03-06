@@ -129,6 +129,11 @@ button {
 
 #dateCreation {
     padding-right: 10%;
+    display: flex;
+}
+
+#dateAlbum {
+    display: flex;
 }
 
 .artistName {
@@ -136,6 +141,19 @@ button {
     margin-top: 10px;
 }
 
+#date {
+    margin-left: 5px;
+    align-self: center;
+}
+
+#inputDateAlbum {
+    margin-left: 5px;
+    align-self: center;
+}
+
+#dateFilter {
+    display: none;
+}
 
 @media (max-width: 1180px) {
     .name {
@@ -158,4 +176,3 @@ button {
         border: 1px solid #ccc;
     }
 }
-

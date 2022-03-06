@@ -35,3 +35,41 @@ function Menu() {
         x.style.display = "none";
     }
 }
+
+let slider = document.getElementById("date");
+let output = document.getElementById("rangeValue");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+    output.innerHTML = this.value;
+}
+
+let sliderAlbum = document.getElementById("inputDateAlbum");
+let outputAlbum = document.getElementById("rangeValueAlbum");
+outputAlbum.innerHTML = sliderAlbum.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+sliderAlbum.oninput = function() {
+    outputAlbum.innerHTML = this.value;
+}
+
+function filter() {
+    let dateList = document.querySelectorAll(".name #dateFilter")
+    let dateInput = document.getElementById("inputDateAlbum")
+    let arrayDateList = [...dateList]
+
+    const method2 = []
+
+    for (let i = 0; i < arrayDateList.length; i++) {
+        method2.push(arrayDateList[i])
+        if (dateInput === method2[i]) {
+            console.log("yo")
+        }
+    }
+}
+
+function displayFilter() {
+    filter().then( () => {
+
+    })
+}

@@ -1,7 +1,5 @@
 {{- /*gotype: groupie-tracker/structures.Artists*/ -}}
 <!DOCTYPE html>
-<!-- This is the main page of the game, where we can play the hangman game and see the attempts,the right letters or
-wrong letters, the hangman and the hidden word, with an input to  choose a letter//-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,11 +15,17 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
 <div id="myMenu" style="display:none">
     <div id="dateCreation">
         Date of creation :
-        <input id="date" type="date" value="">
+        <div id="rangeDateCreation">
+            <input id="date" type="range" value="" min="1900" max="2021">
+            <span id="rangeValue"></span>
+        </div>
     </div>
-    <div>
+    <div id="dateAlbum">
         Date of first album :
-        <input id="date" type="date" value="">
+        <div id="rangeDateAlbum">
+            <input id="inputDateAlbum" type="range" value="" min="1900" max="2021" onclick="filter()">
+            <span id="rangeValueAlbum"></span>
+        </div>
     </div>
 </div>
 <h1 style="font-size:10vw">Groupie Tracker</h1>
@@ -29,6 +33,7 @@ wrong letters, the hangman and the hidden word, with an input to  choose a lette
     <ul class="name">
         {{ range $artist := .}} {{- /*Take the Artist array with . and stock every artist one by one in $artist*/ -}}
             {{/* print all image in the page */}}
+            <div id="dateFilter">{{$artist.CreationDate}}</div>
             <li class="artistsImage">
                 <a href="http://localhost:8000/artists/{{$artist.Id}}">
                     <img src="{{$artist.Image}}" alt="">

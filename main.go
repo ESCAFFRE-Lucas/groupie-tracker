@@ -18,7 +18,7 @@ func HomePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func ArtistPage(w http.ResponseWriter, r *http.Request) {
-	tmpl := template.Must(template.ParseFiles("templates/artist.gohtml"))
+	tmpl := template.Must(template.ParseFiles("templates/artistInfo.gohtml"))
 	fmt.Println(r.URL.Path)
 	artist := artists.GetArtist(w, r)
 	err := tmpl.Execute(w, artist)
@@ -44,7 +44,16 @@ func AboutusPage(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		fmt.Println(err)
 	}
+}
 
+func LofiPage(w http.ResponseWriter, r *http.Request) {
+	tmpl := template.Must(template.ParseFiles("templates/lofi.gohtml"))
+	fmt.Println(r.URL.Path)
+	artist := artists.GetArtistForLofi(w, r)
+	err := tmpl.Execute(w, artist)
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 
 func main() {
@@ -54,6 +63,7 @@ func main() {
 	server.HandleFunc("/artists/", ArtistPage)    //Single artist
 	server.HandleFunc("/relation/", RelationPage) // every concert's dates and locations
 	server.HandleFunc("/aboutus", AboutusPage)    //About us page
+	server.HandleFunc("/lofi/", LofiPage)         //Relaxation page
 
 	server.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("./public"))))
 	// listen to the port 8000
