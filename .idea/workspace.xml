@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05cc9bc8-89ac-4ebf-b5fd-54f73d11172a" name="Changes" comment="dan's css in html resolve">
-      <change afterPath="$PROJECT_DIR$/public/lofi.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/lofi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/lofi.gohtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artists/artists.go" beforeDir="false" afterPath="$PROJECT_DIR$/artists/artists.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/groupie-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/groupie-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/artist.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/artistInfo.gohtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.gohtml" afterDir="false" />
+    <list default="true" id="05cc9bc8-89ac-4ebf-b5fd-54f73d11172a" name="Changes" comment="lofi page finish (maybe can be increase but the body is finish)">
+      <change beforePath="$PROJECT_DIR$/public/lofi.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/lofi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +152,8 @@
     <MESSAGE value="search bar resolve and finish" />
     <MESSAGE value="main page style resolve" />
     <MESSAGE value="dan's css in html resolve" />
-    <option name="LAST_COMMIT_MESSAGE" value="dan's css in html resolve" />
+    <MESSAGE value="lofi page finish (maybe can be increase but the body is finish)" />
+    <option name="LAST_COMMIT_MESSAGE" value="lofi page finish (maybe can be increase but the body is finish)" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
