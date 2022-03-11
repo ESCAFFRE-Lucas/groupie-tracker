@@ -1,7 +1,6 @@
 let artist = document.getElementById("api").innerText.toLowerCase()
 console.log(artist)
 
-
 function getVideoId () {
     return fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${artist}&key=AIzaSyA3O84z6FxVlMkWJkEd8afCixZJmIjoBWU`)
         .then(response => response.json())
@@ -17,7 +16,6 @@ const ytEmbedTemplate = (videoLink) => {
                 allowFullScreen></iframe>
     `
 }
-
 
 let div = document.createElement("div");
 let videoEmbed = document.getElementById("video");
