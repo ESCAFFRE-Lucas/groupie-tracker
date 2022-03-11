@@ -127,12 +127,14 @@ button {
 }
 
 #dateCreation {
-    padding-right: 10%;
+    padding-right: 5%;
+    padding-left: 5%;
     display: flex;
 }
 
 #dateAlbum {
     display: flex;
+    align-items: center;
 }
 
 .artistName {
@@ -140,7 +142,7 @@ button {
     margin-top: 10px;
 }
 
-#date {
+#inputDateCreation {
     margin-left: 5px;
     align-self: center;
 }
@@ -150,8 +152,14 @@ button {
     align-self: center;
 }
 
-#dateFilter {
-    display: none;
+#numberMembers {
+    display: flex;
+    margin-left: 5%;
+    margin-top: 5px;
+}
+
+#rangeNumberMembers {
+    margin-left: 5px;
 }
 
 @media (max-width: 1180px) {

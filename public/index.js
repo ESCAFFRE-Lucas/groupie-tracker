@@ -36,7 +36,7 @@ function Menu() {
     }
 }
 
-let slider = document.getElementById("date");
+let slider = document.getElementById("inputDateCreation");
 let output = document.getElementById("rangeValue");
 output.innerHTML = slider.value;
 
@@ -53,23 +53,90 @@ sliderAlbum.oninput = function() {
     outputAlbum.innerHTML = this.value;
 }
 
-function filter() {
-    let dateList = document.querySelectorAll(".name #dateFilter")
-    let dateInput = document.getElementById("inputDateAlbum")
+function filterDateCreation() {
+    const dateList = document.querySelectorAll(".name .arrayDateCreation")
+    console.log(dateList)
+    const dateInput = document.getElementById("inputDateCreation").value
+    console.log(dateInput)
     let arrayDateList = [...dateList]
 
-    const method2 = []
+
+    const test = arrayDateList.map( x => x.innerText)
+    console.log(test)
 
     for (let i = 0; i < arrayDateList.length; i++) {
-        method2.push(arrayDateList[i])
-        if (dateInput === method2[i]) {
-            console.log("yo")
+        test.push(arrayDateList[i])
+        if (dateInput === test[i]) {
+            const listArtists = document.querySelectorAll(".name li");
+
+            // Loop through all list items, and hide those who don't match the search query
+            for ( let i = 0; i < listArtists.length; i++) {
+                if (test[i] === dateInput) {
+                    listArtists[i].style.display = "unset";
+                } else {
+                    listArtists[i].style.display = "none";
+                }
+            }
         }
     }
 }
 
-function displayFilter() {
-    filter().then( () => {
+function filterDateAlbum() {
+    const dateList = document.querySelectorAll(".name .arrayDateAlbum")
+    console.log(dateList)
+    const dateInput = document.getElementById("inputDateAlbum").value
+    console.log(dateInput)
+    let arrayDateList = [...dateList]
 
-    })
+
+    const test = arrayDateList.map( x => x.innerText)
+    console.log(test)
+
+    for (let i = 0; i < arrayDateList.length; i++) {
+        test.push(arrayDateList[i])
+        if (dateInput === test[i]) {
+            const listArtists = document.querySelectorAll(".name li");
+
+            // Loop through all list items, and hide those who don't match the search query
+            for ( let i = 0; i < listArtists.length; i++) {
+                if (test[i] === dateInput) {
+                    listArtists[i].style.display = "unset";
+                } else {
+                    listArtists[i].style.display = "none";
+                }
+            }
+        }
+    }
+}
+function filterNumberMembers() {
+    const dateList = document.querySelectorAll(".name .arrayNumberMembers")
+    const dateInput = document.querySelectorAll(".inputNumberMembers")
+    console.log(dateInput)
+    let arrayDateList = [...dateList]
+
+
+    const test = arrayDateList.map( x => x.innerText)
+    console.log(test)
+
+    for (let i = 0; i < arrayDateList.length; i++) {
+        test.push(arrayDateList[i])
+        if (dateInput === test[i]) {
+            const listArtists = document.querySelectorAll(".name li");
+
+            // Loop through all list items, and hide those who don't match the search query
+            for ( let i = 0; i < listArtists.length; i++) {
+                if (test[i] === dateInput) {
+                    listArtists[i].style.display = "unset";
+                } else {
+                    listArtists[i].style.display = "none";
+                }
+            }
+        }
+    }
+}
+
+function formatDate() {
+    let date = document.getElementById("rangeValueAlbum")
+    let splitDate = date.split("-")
+    console.log(splitDate)
 }
