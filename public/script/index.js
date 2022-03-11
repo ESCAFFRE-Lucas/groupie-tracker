@@ -54,24 +54,21 @@ sliderAlbum.oninput = function() {
 }
 
 function filterDateCreation() {
-    const dateList = document.querySelectorAll(".name .arrayDateCreation")
-    console.log(dateList)
+    const dateList = document.querySelectorAll(".name .dateCreation")
+    // console.log(dateList)
     const dateInput = document.getElementById("inputDateCreation").value
-    console.log(dateInput)
-    let arrayDateList = [...dateList]
+    // console.log(dateInput)
 
+    const dates = [...dateList].map( x => x.innerText)
+    console.log(dates)
 
-    const test = arrayDateList.map( x => x.innerText)
-    console.log(test)
-
-    for (let i = 0; i < arrayDateList.length; i++) {
-        test.push(arrayDateList[i])
-        if (dateInput === test[i]) {
+    for (let i = 0; i < dates.length; i++) {
+        if (dateInput === dates[i]) {
             const listArtists = document.querySelectorAll(".name li");
 
             // Loop through all list items, and hide those who don't match the search query
             for ( let i = 0; i < listArtists.length; i++) {
-                if (test[i] === dateInput) {
+                if (dates[i] === dateInput) {
                     listArtists[i].style.display = "unset";
                 } else {
                     listArtists[i].style.display = "none";
@@ -82,7 +79,7 @@ function filterDateCreation() {
 }
 
 function filterDateAlbum() {
-    const dateList = document.querySelectorAll(".name .arrayDateAlbum")
+    const dateList = document.querySelectorAll(".name .dateFirstAlbum")
     console.log(dateList)
     const dateInput = document.getElementById("inputDateAlbum").value
     console.log(dateInput)
@@ -108,28 +105,36 @@ function filterDateAlbum() {
         }
     }
 }
-function filterNumberMembers() {
-    const dateList = document.querySelectorAll(".name .arrayNumberMembers")
-    const dateInput = document.querySelectorAll(".inputNumberMembers")
+
+function filterNumberMembers(dateInput) {
+    const dateList = document.querySelectorAll(".name .members")
     console.log(dateInput)
-    let arrayDateList = [...dateList]
+
+    let arrayDateList = [...dateList];
+    if (!arrayDateList[dateInput-1].checked){
+        // TODO clear filter
+        console.log(arrayDateList[dateInput-1])
+        return;
+    } else {
+        console.log(arrayDateList[dateInput-1])
+    }
 
 
-    const test = arrayDateList.map( x => x.innerText)
-    console.log(test)
-
-    for (let i = 0; i < arrayDateList.length; i++) {
-        test.push(arrayDateList[i])
-        if (dateInput === test[i]) {
+    for (let i = 0; i < dateList.length; i++) {
+        arrayDateList.push(dateList[i].innerHTML)
+        console.log(typeof dateList[i].innerHTML)
+        console.log(typeof arrayDateList)
+        if (dateInput === dateList[i].innerHTML.length) {
             const listArtists = document.querySelectorAll(".name li");
 
             // Loop through all list items, and hide those who don't match the search query
             for ( let i = 0; i < listArtists.length; i++) {
-                if (test[i] === dateInput) {
+                if (dateList[i].innerHTML.length === dateInput) {
                     listArtists[i].style.display = "unset";
                 } else {
                     listArtists[i].style.display = "none";
                 }
+                console.log("here")
             }
         }
     }

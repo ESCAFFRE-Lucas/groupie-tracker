@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Groupie-tracker</title>
-    <link rel="stylesheet" href="../public/groupie-style.css">
+    <link rel="stylesheet" href="../public/styles/groupie-style.css">
 </head>
 <body>
 <div class="searchbar" >
@@ -30,20 +30,12 @@
     <div id="numberMembers">
         N° of Members :
         <div id="rangeNumberMembers">
-            <input class="inputNumberMembers" type="checkbox" value="" onclick="filterNumberMembers()">
-            <label>1</label>
-            <input class="inputNumberMembers" type="checkbox" value="" onclick="filterNumberMembers()">
-            <label>2</label>
-            <input class="inputNumberMembers" type="checkbox" value="" onclick="filterNumberMembers()">
-            <label>3</label>
-            <input class="inputNumberMembers" type="checkbox" value="" onclick="filterNumberMembers()">
-            <label>4</label>
-            <input class="inputNumberMembers" type="checkbox" value="" onclick="filterNumberMembers()">
-            <label>5</label>
-            <input class="inputNumberMembers" type="checkbox" value="" onclick="filterNumberMembers()">
-            <label>6</label>
-            <input class="inputNumberMembers" type="checkbox" value="" onclick="filterNumberMembers()">
-            <label>7</label>
+            <input class="inputNumberMembers" type="checkbox" value="1">
+            <label for="1">1</label>
+            <input class="inputNumberMembers" type="checkbox" value="2">
+            <label for="2">2</label>
+            <input class="inputNumberMembers" type="checkbox" value="3">
+            <label for="3">3+</label>
         </div>
     </div>
 </div>
@@ -52,18 +44,23 @@
     <ul class="name">
         {{ range $artist := .}} {{- /*Take the Artist array with . and stock every artist one by one in $artist*/ -}}
             {{/* print all image in the page */}}
-            <div class="arrayDateCreation" style="display:none;">{{$artist.CreationDate}}</div>
-            <div class="arrayDateAlbum" style="display:none;">{{$artist.FirstAlbum}}</div>
-            <div class="arrayNumberMembers" style="display:none;">{{$artist.Members}}</div>
-            <li class="artistsImage">
-                <a href="http://localhost:8000/artists/{{$artist.Id}}">
-                    <img src="{{$artist.Image}}" alt="">
-                    <div class="artistName"> {{$artist.Name}}</div>
-                </a>
-            </li>
+        <li class="artistsImage">
+            <div class="dateCreation" style="display:none;">{{$artist.CreationDate}}</div>
+            <div class="dateFirstAlbum" style="display:none;">{{$artist.FirstAlbum}}</div>
+            <div class="members" style="display:none;">
+                {{ range $member := $artist.Members}}
+                    <p>{{$member}}</p>
+                {{ end }}
+            </div>
+            <a href="http://localhost:8000/artists/{{$artist.Id}}">
+                <img src="{{$artist.Image}}" alt="">
+                <div class="artistName"> {{$artist.Name}}</div>
+            </a>
+        </li>
         {{end}}
     </ul>
 </div>
-<script src="../public/index.js"></script>
+<script src="../public/script/index.js"></script>
+<script src="../public/script/nbMembers.js"></script>
 </body>
 </html>
