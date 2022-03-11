@@ -17,6 +17,8 @@ const ytEmbedTemplate = (videoLink) => {
     `
 }
 
+
+
 let div = document.createElement("div");
 let videoEmbed = document.getElementById("video");
 getVideoId().then(videoId => {
