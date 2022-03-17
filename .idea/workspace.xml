@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05cc9bc8-89ac-4ebf-b5fd-54f73d11172a" name="Changes" comment="changed color of visited site, for better looking">
+    <list default="true" id="05cc9bc8-89ac-4ebf-b5fd-54f73d11172a" name="Changes" comment="refactor css and js files, continue of the filter bonus">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/artist.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/artist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/script/artist.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script/artist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/script/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/script/lofi.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script/lofi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/script/nbMembers.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script/nbMembers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/groupie-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/groupie-style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/artistInfo.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/artistInfo.gohtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.gohtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

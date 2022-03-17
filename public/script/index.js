@@ -81,7 +81,8 @@ function filterDateCreation() {
 function filterDateAlbum() {
     const dateList = document.querySelectorAll(".name .dateFirstAlbum")
     console.log(dateList)
-    const dateInput = document.getElementById("inputDateAlbum").value
+    const dateInput = formatDate()
+    console.log(typeof dateInput)
     console.log(dateInput)
     let arrayDateList = [...dateList]
 
@@ -104,6 +105,16 @@ function filterDateAlbum() {
             }
         }
     }
+}
+
+function formatDate() {
+    let date = document.getElementById("rangeValueAlbum").innerText
+    let splitDate = date.split("-")
+    let dateYear = splitDate[0]
+    splitDate[0] = splitDate[2]
+    splitDate[2] = dateYear
+    splitDate = splitDate[0] + '-' + splitDate[1] + '-' + splitDate[2]
+    return splitDate
 }
 
 function filterNumberMembers(dateInput) {
@@ -138,10 +149,4 @@ function filterNumberMembers(dateInput) {
             }
         }
     }
-}
-
-function formatDate() {
-    let date = document.getElementById("rangeValueAlbum")
-    let splitDate = date.split("-")
-    console.log(splitDate)
 }

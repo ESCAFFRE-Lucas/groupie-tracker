@@ -3,7 +3,7 @@ console.log(lofi)
 
 
 function getLofiVideoId () {
-    return fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${lofi}_lofi&key=AIzaSyA3O84z6FxVlMkWJkEd8afCixZJmIjoBWU`)
+    return fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${lofi}_lofi&key=AIzaSyBb4Otfo4t4_i0b3HiZr_O8u2CBzyM-VoA`)
         .then(response => response.json())
         .then(response => response['items'][1].id.videoId)
         .catch(error => alert("Erreur : " + error));
