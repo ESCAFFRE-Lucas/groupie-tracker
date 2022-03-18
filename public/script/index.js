@@ -8,16 +8,16 @@
 //     map.setTilt(45);
 // }
 
+
+// Function that permit the user to search the artist he want by tapping his name
 function searchMenu() {
     // Declare variables
     const input = document.getElementById("mySearch");
     const filter = input.value.toUpperCase();
-    // ul = document.getElementsByClassName("name");
-    // li = ul.getElementsByTagName("li")
     const listItems = document.querySelectorAll(".name li")
 
     // Loop through all list items, and hide those who don't match the search query
-    for ( let i = 0; i < listItems.length; i++) {
+    for (let i = 0; i < listItems.length; i++) {
         let a = listItems[i].getElementsByTagName("a")[0];
         if (a.innerText.toUpperCase().indexOf(filter) > -1) {
             listItems[i].style.display = "unset";
@@ -27,6 +27,7 @@ function searchMenu() {
     }
 }
 
+//Function that prints the filter menu
 function Menu() {
     let x = document.getElementById("myMenu");
     if (x.style.display === "none") {
@@ -40,7 +41,7 @@ let slider = document.getElementById("inputDateCreation");
 let output = document.getElementById("rangeValue");
 output.innerHTML = slider.value;
 
-slider.oninput = function() {
+slider.oninput = function () {
     output.innerHTML = this.value;
 }
 
@@ -49,25 +50,23 @@ let outputAlbum = document.getElementById("rangeValueAlbum");
 outputAlbum.innerHTML = sliderAlbum.value; // Display the default slider value
 
 // Update the current slider value (each time you drag the slider handle)
-sliderAlbum.oninput = function() {
+sliderAlbum.oninput = function () {
     outputAlbum.innerHTML = this.value;
 }
 
+//function that filter the artist by the date of the creation
 function filterDateCreation() {
     const dateList = document.querySelectorAll(".name .dateCreation")
-    // console.log(dateList)
     const dateInput = document.getElementById("inputDateCreation").value
-    // console.log(dateInput)
+    const dates = [...dateList].map(x => x.innerText)
 
-    const dates = [...dateList].map( x => x.innerText)
-    console.log(dates)
-
+    //display the user that have the good date of creation
     for (let i = 0; i < dates.length; i++) {
         if (dateInput === dates[i]) {
             const listArtists = document.querySelectorAll(".name li");
 
             // Loop through all list items, and hide those who don't match the search query
-            for ( let i = 0; i < listArtists.length; i++) {
+            for (let i = 0; i < listArtists.length; i++) {
                 if (dates[i] === dateInput) {
                     listArtists[i].style.display = "unset";
                 } else {
@@ -78,70 +77,40 @@ function filterDateCreation() {
     }
 }
 
+//function that filter the artist by the date of his first album
 function filterDateAlbum() {
     const dateList = document.querySelectorAll(".name .dateFirstAlbum")
-    console.log(dateList)
-    const dateInput = document.getElementById("inputDateAlbum").value
-    console.log(dateInput)
+    const dateUserInput = formatDate()
+    //take all the array one by one with ...
     let arrayDateList = [...dateList]
 
-
-    const test = arrayDateList.map( x => x.innerText)
-    console.log(test)
+    //creation of a map to compare with the good input later
+    const mapOfArrayDate = arrayDateList.map(x => x.innerText)
 
     for (let i = 0; i < arrayDateList.length; i++) {
-        test.push(arrayDateList[i])
-        if (dateInput === test[i]) {
-            const listArtists = document.querySelectorAll(".name li");
-
+        mapOfArrayDate.push(arrayDateList[i])
+        if (dateUserInput === mapOfArrayDate[i]) {
+            const listOfArtists = document.querySelectorAll(".name li");
             // Loop through all list items, and hide those who don't match the search query
-            for ( let i = 0; i < listArtists.length; i++) {
-                if (test[i] === dateInput) {
-                    listArtists[i].style.display = "unset";
+            for (let i = 0; i < listOfArtists.length; i++) {
+                if (mapOfArrayDate[i] === dateUserInput) {
+                    listOfArtists[i].style.display = "unset";
                 } else {
-                    listArtists[i].style.display = "none";
+                    listOfArtists[i].style.display = "none";
                 }
             }
         }
     }
 }
 
-function filterNumberMembers(dateInput) {
-    const dateList = document.querySelectorAll(".name .members")
-    console.log(dateInput)
-
-    let arrayDateList = [...dateList];
-    if (!arrayDateList[dateInput-1].checked){
-        // TODO clear filter
-        console.log(arrayDateList[dateInput-1])
-        return;
-    } else {
-        console.log(arrayDateList[dateInput-1])
-    }
-
-
-    for (let i = 0; i < dateList.length; i++) {
-        arrayDateList.push(dateList[i].innerHTML)
-        console.log(typeof dateList[i].innerHTML)
-        console.log(typeof arrayDateList)
-        if (dateInput === dateList[i].innerHTML.length) {
-            const listArtists = document.querySelectorAll(".name li");
-
-            // Loop through all list items, and hide those who don't match the search query
-            for ( let i = 0; i < listArtists.length; i++) {
-                if (dateList[i].innerHTML.length === dateInput) {
-                    listArtists[i].style.display = "unset";
-                } else {
-                    listArtists[i].style.display = "none";
-                }
-                console.log("here")
-            }
-        }
-    }
-}
-
+//function that split the date of the date input and put the letters in the correct order because the input (type = date)
+// returns the date upside down
 function formatDate() {
-    let date = document.getElementById("rangeValueAlbum")
+    let date = document.getElementById("rangeValueAlbum").innerText
     let splitDate = date.split("-")
-    console.log(splitDate)
+    let dateYear = splitDate[0]
+    splitDate[0] = splitDate[2]
+    splitDate[2] = dateYear
+    splitDate = splitDate[0] + '-' + splitDate[1] + '-' + splitDate[2]
+    return splitDate
 }

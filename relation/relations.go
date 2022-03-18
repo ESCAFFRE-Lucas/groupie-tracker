@@ -11,8 +11,6 @@ import (
 
 //This func permit to get informations of relation in the API by using his id
 func GetRelation(w http.ResponseWriter, r *http.Request) structures.Relations {
-	test := GetRelationsId(w, r)
-	fmt.Println(test)
 	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/relation/" + GetRelationsId(w, r))
 	if err != nil {
 		fmt.Println(err)

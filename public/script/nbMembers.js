@@ -9,30 +9,40 @@ const checkboxState = {
 
 const artists = [...document.querySelectorAll(".name li")]
 
-const toggleVisibility = (artist, visible) => {
-    for (let i = 0; i < artist.length; i++) {
-        artist[i].style.display = visible ? "unset" : "none";
-    }
-}
-
+//loop on all checkbox to see the numbers of the input
 checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
-        // console.log(event.target.checked, event.target.value);
         checkboxState[event.target.value] = event.target.checked;
-        console.log(checkboxState)
-        const members = artists.map((artist) => {
-            return [...artist.querySelectorAll(".members p")]?.map((member) => member.innerText)
+        //creation of a map to have all the members of an artist
+        const membersByGroup = artists.map((artist) => {
+            return {
+                artist: artist.innerHTML,
+                members: [...artist.querySelectorAll(".members p")]?.map((member) => member.innerText)
+            }
         })
-        for (let i = 0; i < members.length; i++) {
-            if (members[i].length === 1 && checkboxState[event.target.value] === true) {
-                for ( let i = 0; i < artists.length; i++) {
-                    if (members[i].length === 1) {
-                        artists[i].style.display = "unset";
-                    } else {
-                        artists[i].style.display = "none";
-                    }
-                }
+        //condition to have all the artist after the user uncheck all input
+        if (checkboxState["1"] === false  && checkboxState["2"] === false && checkboxState["3"] === false) {
+            artists.forEach((artist) => {
+                artist.style.display = "unset"
+            })
+        } else {
+            for (let i = 0; i < membersByGroup.length; i++) {
+                filterByNumberOfMembers(membersByGroup[i])
             }
         }
     })
 })
+
+//function that return the good artist for the good checkbox with condition
+const filterByNumberOfMembers = (groupInfos) => {
+    const nbMembers = groupInfos.members.length;
+
+    artists.forEach((artist) => {
+        if (artist.innerHTML !== groupInfos.artist) return
+        artist.style.display = "none"
+        if ((checkboxState["1"] && nbMembers === 1) || (checkboxState["2"] && nbMembers === 2) || (checkboxState["3"] && nbMembers >= 3)) {
+            artist.style.display = "unset"
+            console.log("hi")
+        }
+    })
+}
