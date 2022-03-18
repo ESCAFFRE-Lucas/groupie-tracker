@@ -8,12 +8,12 @@
 //     map.setTilt(45);
 // }
 
+
+// Function that permit the user to search the artist he want by tapping his name
 function searchMenu() {
     // Declare variables
     const input = document.getElementById("mySearch");
     const filter = input.value.toUpperCase();
-    // ul = document.getElementsByClassName("name");
-    // li = ul.getElementsByTagName("li")
     const listItems = document.querySelectorAll(".name li")
 
     // Loop through all list items, and hide those who don't match the search query
@@ -27,6 +27,7 @@ function searchMenu() {
     }
 }
 
+//Function that prints the filter menu
 function Menu() {
     let x = document.getElementById("myMenu");
     if (x.style.display === "none") {
@@ -53,11 +54,13 @@ sliderAlbum.oninput = function () {
     outputAlbum.innerHTML = this.value;
 }
 
+//function that filter the artist by the date of the creation
 function filterDateCreation() {
     const dateList = document.querySelectorAll(".name .dateCreation")
     const dateInput = document.getElementById("inputDateCreation").value
     const dates = [...dateList].map(x => x.innerText)
 
+    //display the user that have the good date of creation
     for (let i = 0; i < dates.length; i++) {
         if (dateInput === dates[i]) {
             const listArtists = document.querySelectorAll(".name li");
@@ -74,12 +77,14 @@ function filterDateCreation() {
     }
 }
 
+//function that filter the artist by the date of his first album
 function filterDateAlbum() {
     const dateList = document.querySelectorAll(".name .dateFirstAlbum")
     const dateUserInput = formatDate()
+    //take all the array one by one with ...
     let arrayDateList = [...dateList]
 
-
+    //creation of a map to compare with the good input later
     const mapOfArrayDate = arrayDateList.map(x => x.innerText)
 
     for (let i = 0; i < arrayDateList.length; i++) {
@@ -98,6 +103,8 @@ function filterDateAlbum() {
     }
 }
 
+//function that split the date of the date input and put the letters in the correct order because the input (type = date)
+// returns the date upside down
 function formatDate() {
     let date = document.getElementById("rangeValueAlbum").innerText
     let splitDate = date.split("-")
