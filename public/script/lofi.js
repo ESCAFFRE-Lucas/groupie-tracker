@@ -1,5 +1,4 @@
 let lofi = document.getElementById("groupName").innerText.toLowerCase()
-console.log(lofi)
 
 
 function getLofiVideoId () {
