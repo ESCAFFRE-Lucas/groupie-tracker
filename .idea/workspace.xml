@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05cc9bc8-89ac-4ebf-b5fd-54f73d11172a" name="Changes" comment="refactor some variables">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/script/artist.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script/artist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/script/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/script/lofi.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script/lofi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/script/nbMembers.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script/nbMembers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/relation/relations.go" beforeDir="false" afterPath="$PROJECT_DIR$/relation/relations.go" afterDir="false" />
-    </list>
+    <list default="true" id="05cc9bc8-89ac-4ebf-b5fd-54f73d11172a" name="Changes" comment="improve artist's page style" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
