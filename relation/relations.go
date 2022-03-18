@@ -9,6 +9,7 @@ import (
 	"strings"
 )
 
+//This func permit to get informations of relation in the API by using his id
 func GetRelation(w http.ResponseWriter, r *http.Request) structures.Relations {
 	test := GetRelationsId(w, r)
 	fmt.Println(test)
@@ -34,6 +35,7 @@ func GetRelation(w http.ResponseWriter, r *http.Request) structures.Relations {
 	return relation
 }
 
+//Get a specific relation's id, for the GetRelation func
 func GetRelationsId(w http.ResponseWriter, r *http.Request) string {
 	id := r.URL.Path[len("/relation/"):]
 	if strings.Contains(id, "/") {

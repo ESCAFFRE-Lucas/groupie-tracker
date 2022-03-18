@@ -11,6 +11,7 @@ import (
 	"strings"
 )
 
+//This func permit to get informations for all artists in the API
 func GetArtists() []structures.Artist {
 	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/artists")
 	if err != nil {
@@ -35,6 +36,7 @@ func GetArtists() []structures.Artist {
 	return arrArtists
 }
 
+//This func permit to get informations for one specific artist in the API by using his id
 func GetArtist(w http.ResponseWriter, r *http.Request) structures.Artist {
 	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/artists/" + GetArtistsId(w, r))
 	if err != nil {
@@ -57,6 +59,7 @@ func GetArtist(w http.ResponseWriter, r *http.Request) structures.Artist {
 	return artist
 }
 
+//Same as GetArtist, but for lofi (can't make 2 same requests)
 func GetArtistForLofi(w http.ResponseWriter, r *http.Request) structures.Artist {
 	resp, err := http.Get("https://groupietrackers.herokuapp.com/api/artists/" + GetArtistsIdForLofi(w, r))
 	if err != nil {
@@ -79,6 +82,7 @@ func GetArtistForLofi(w http.ResponseWriter, r *http.Request) structures.Artist 
 	return artist
 }
 
+//Get a specific artist's id, for the GetArtistForLofi func
 func GetArtistsId(w http.ResponseWriter, r *http.Request) string {
 	id := r.URL.Path[len("/artists/"):]
 	if strings.Contains(id, "/") {
@@ -89,6 +93,7 @@ func GetArtistsId(w http.ResponseWriter, r *http.Request) string {
 	return id
 }
 
+//Get a specific artist's id, for the GetArtist func
 func GetArtistsIdForLofi(w http.ResponseWriter, r *http.Request) string {
 	id := r.URL.Path[len("/lofi/"):]
 	if strings.Contains(id, "/") {

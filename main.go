@@ -8,8 +8,9 @@ import (
 	"net/http"
 )
 
+//Setup the home page
 func HomePage(w http.ResponseWriter, r *http.Request) {
-	tmpl := template.Must(template.ParseFiles("templates/index.gohtml"))
+	tmpl := template.Must(template.ParseFiles("templates/home.gohtml"))
 	data := artists.GetArtists()
 	err := tmpl.Execute(w, data)
 	if err != nil {
@@ -17,6 +18,7 @@ func HomePage(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+//Setup the artit page
 func ArtistPage(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("templates/artistInfo.gohtml"))
 	fmt.Println(r.URL.Path)
@@ -27,6 +29,7 @@ func ArtistPage(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+//Setup the relation page
 func RelationPage(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("templates/relation.gohtml"))
 	fmt.Println(r.URL.Path)
@@ -37,6 +40,7 @@ func RelationPage(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+//Setup the about us page
 func AboutusPage(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("templates/aboutus.gohtml"))
 	fmt.Println(r.URL.Path)
@@ -46,6 +50,7 @@ func AboutusPage(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+//Setup the lofi page
 func LofiPage(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("templates/lofi.gohtml"))
 	fmt.Println(r.URL.Path)
@@ -56,6 +61,7 @@ func LofiPage(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+//Start the server and handle all the pages
 func main() {
 	server := http.NewServeMux()
 

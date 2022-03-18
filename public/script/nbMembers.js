@@ -33,24 +33,6 @@ checkboxes.forEach((checkbox) => {
                     }
                 }
             }
-            else if (members[i].length === 2 && checkboxState[event.target.value] === true) {
-                for ( let i = 0; i < artists.length; i++) {
-                    if (members[i].length === 2) {
-                        artists[i].style.display = "unset";
-                    } else {
-                        artists[i].style.display = "none";
-                    }
-                }
-            }
-            else if (members[i].length > 3 && checkboxState[event.target.value] === true) {
-                for ( let i = 0; i < artists.length; i++) {
-                    if (members[i].length > 3) {
-                        artists[i].style.display = "unset";
-                    } else {
-                        artists[i].style.display = "none";
-                    }
-                }
-            }
         }
     })
 })
