@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05cc9bc8-89ac-4ebf-b5fd-54f73d11172a" name="Changes" comment="link to an API for each band">
+    <list default="true" id="05cc9bc8-89ac-4ebf-b5fd-54f73d11172a" name="Changes" comment="making the commentaries of functions and files, plus delete unused files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artist.gohtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/artists/artists.go" beforeDir="false" afterPath="$PROJECT_DIR$/artists/artists.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dates/dates.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/locations/locations.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/script/nbMembers.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script/nbMembers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/relation/relations.go" beforeDir="false" afterPath="$PROJECT_DIR$/relation/relations.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/aboutus.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/aboutus.gohtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/artist-index.gohtml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/artistInfo.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/artistInfo.gohtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.gohtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/lofi.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/lofi.gohtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/relation.gohtml" beforeDir="false" afterPath="$PROJECT_DIR$/templates/relation.gohtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utilities/file-manager.go" beforeDir="false" afterPath="$PROJECT_DIR$/utilities/file-manager.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/artist.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/artist.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/styles/groupie-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles/groupie-style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +159,8 @@
     <MESSAGE value="aligned the artist name (with grid), better looking" />
     <MESSAGE value="changed color of visited site, for better looking" />
     <MESSAGE value="link to an API for each band" />
-    <option name="LAST_COMMIT_MESSAGE" value="link to an API for each band" />
+    <MESSAGE value="making the commentaries of functions and files, plus delete unused files" />
+    <option name="LAST_COMMIT_MESSAGE" value="making the commentaries of functions and files, plus delete unused files" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
